@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PersonFragment">
+
+    <TextView
+        android:id="@+id/personTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="个人中心"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:textSize="35dp"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="57dp" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/school" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:text="用户名：" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
+        android:layout_marginRight="15dp"
+        android:layout_gravity="right|center_vertical"
+        android:text="fx513238300" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="余额："
+        android:layout_marginTop="10dp"
+        android:textSize="30dp"/>
+    <TextView
+        android:id="@+id/money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
+        android:layout_marginRight="15dp"
+        android:layout_gravity="right|center_vertical"
+        android:text="0.0元" />
+
+    <Button
+        android:id="@+id/tocash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="提现" />
+
+
+</LinearLayout>

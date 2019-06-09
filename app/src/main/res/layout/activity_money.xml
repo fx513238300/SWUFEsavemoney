@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:orientation="vertical"
+    tools:context=".MoneyFragment">
+
+    <TextView
+        android:id="@+id/moneyTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="省钱啦"
+        android:textColor="@color/design_default_color_primary"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:inputType="textPersonName"
+        android:text="省钱码" />
+
+    <Button
+        android:id="@+id/savemoney"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="立刻省钱" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:singleLine="false"
+        android:textSize="20dp"
+        android:text="使用说明：\n1.根据省钱列表，挑选心仪的店铺\n2.到店消费\n3.需满足消费金额条件且消费成功\n4.由店家告知客户'省钱码'\n5.在输入框中输入优惠码\n6.点击立即省钱\n7.对应省钱金额即会到余额中\n8.余额可提现（任意金额）\n9.每个店不可重复使用\n"
+        />
+
+</LinearLayout >

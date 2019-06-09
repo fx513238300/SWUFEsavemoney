@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThirdActivity"
+    android:orientation="vertical">
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="com.swufe.swufesavemoney.HomeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <fragment
+        android:id="@+id/fragment_money"
+        android:name="com.swufe.swufesavemoney.MoneyFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"/>
+    <fragment
+        android:id="@+id/fragment_person"
+        android:name="com.swufe.swufesavemoney.PersonFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"/>
+
+    <RadioGroup
+        android:id="@+id/bottomGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioHome"
+            style="@style/rg_btn_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/home"
+            android:text="详情" />
+        <RadioButton
+            android:id="@+id/radioMoney"
+            style="@style/rg_btn_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/mone"
+            android:text="省钱" />
+        <RadioButton
+            android:id="@+id/radioPerson"
+            style="@style/rg_btn_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/person"
+            android:text="个人中心" />
+
+    </RadioGroup>
+
+</LinearLayout>
