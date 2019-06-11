@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/personfragment"
     tools:context=".PersonFragment">
 
     <TextView
@@ -24,7 +25,7 @@
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
-        android:src="@drawable/school" />
+        android:src="@drawable/yuan" />
 
     <TextView
         android:id="@+id/textView2"
