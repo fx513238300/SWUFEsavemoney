@@ -1,6 +1,8 @@
 package com.swufe.swufesavemoney;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,9 +10,26 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class PersonFragment extends Fragment {
+    TextView result;
+    String res;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceSate) {
-        return inflater.inflate(R.layout.activity_person, container);
+
+        View view = inflater.inflate(R.layout.activity_person, null);
+             result=(TextView)view.findViewById(R.id.result);
+        if (getArguments() != null) {
+            String mParam1 = getArguments().getString("param");
+            result.setText(mParam1);
+        }
+        return view;
+    }
+
+    public static PersonFragment newInstance(String text) {
+        PersonFragment fragment = new PersonFragment();
+        Bundle args = new Bundle();
+        args.putString("param", text);
+        fragment.setArguments(args);
+        return fragment;
     }
 
     public void OnActivityCreated(Bundle savedInstanceSate) {

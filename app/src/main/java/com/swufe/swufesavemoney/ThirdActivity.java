@@ -1,6 +1,7 @@
 package com.swufe.swufesavemoney;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -17,10 +18,14 @@ public class ThirdActivity extends FragmentActivity {
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
     private RadioButton rbtHome,rbtMoney,rbtPerson;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
+
+
 
         mFragments=new Fragment[3];
         fragmentManager=getSupportFragmentManager();
