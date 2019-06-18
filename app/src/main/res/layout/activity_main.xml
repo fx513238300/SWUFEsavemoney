@@ -63,6 +63,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="218dp"
         android:onClick="onClick"
+        android:background="#FFC107"
         android:text="登录" />
 
     <EditText
