@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +31,15 @@ public class PersonFragment extends Fragment {
         args.putString("param", text);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        String r=((ThirdActivity)getActivity()).getResult();
+        r=r+"元";
+        Log.i("Text","result"+r);
+        result.setText(r);
     }
 
     public void OnActivityCreated(Bundle savedInstanceSate) {

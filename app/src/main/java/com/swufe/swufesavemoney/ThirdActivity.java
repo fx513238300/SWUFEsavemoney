@@ -20,6 +20,16 @@ public class ThirdActivity extends FragmentActivity {
     private RadioButton rbtHome,rbtMoney,rbtPerson;
 
 
+  public String result="0";
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -73,6 +73,7 @@
         android:textSize="25dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
+        android:background="#FFC107"
         android:text="提现" />
 
 

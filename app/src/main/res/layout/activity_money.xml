@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="省钱啦"
-        android:textColor="@color/design_default_color_primary"
+        android:textColor="#FFC107"
         android:gravity="center"
         android:textSize="25dp"
         android:layout_marginTop="20dp"
@@ -37,6 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:background="#FFC107"
         android:text="立刻省钱" />
 
     <TextView

@@ -17,7 +17,7 @@ import android.widget.Toast;
 import static android.widget.Toast.LENGTH_SHORT;
 
 
-public class MoneyFragment extends Fragment{
+public class MoneyFragment extends Fragment  {
     EditText shengqianma;
     Button btnmoney;
     String number;
@@ -35,15 +35,32 @@ public class MoneyFragment extends Fragment{
             @Override
 //重写onClick函数
             public void onClick(View v){
-                PersonFragment fragment2 = PersonFragment.newInstance("从Fragment1传来的参数");
-
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.commit();
+                String sqm=shengqianma.getText().toString();
+                if(sqm.equals("123456")){
+                    String res=((ThirdActivity)getActivity()).getResult();
+                    res= String.valueOf(Integer.parseInt(res)+2);
+                    ((ThirdActivity)getActivity()).setResult(res);
+                    Log.i("Text","shengqianma"+sqm);
+                    Log.i("Text","money"+res);
+                    Toast.makeText(getActivity(),"恭喜你！省钱成功！",Toast.LENGTH_SHORT).show();
+                }
+                else if(sqm.equals("456789")){
+                    String res=((ThirdActivity)getActivity()).getResult();
+                    res= String.valueOf(Integer.parseInt(res)+3);
+                    ((ThirdActivity)getActivity()).setResult(res);
+                    Log.i("Text","shengqianma"+sqm);
+                    Log.i("Text","money"+res);
+                    Toast.makeText(getActivity(),"恭喜你！省钱成功！",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(getActivity(),"省钱码错误",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 return view;
 
     }
+
 
     public void OnActivityCreated(Bundle savedInstanceSate) {
         super.onActivityCreated(savedInstanceSate);
