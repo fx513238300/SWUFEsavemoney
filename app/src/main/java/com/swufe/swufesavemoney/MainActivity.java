@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.i("Text","yonghuming"+yonghuming);
         Log.i("Text","mima"+mima);
         if(yonghuming.equals("fx513238300")&mima.equals("19990701fx")){
-                     Intent start=new Intent(this,ThirdActivity.class);
+                     Intent start=new Intent(this,ClubActivity.class);
                      startActivity(start);
         }
                  else{
