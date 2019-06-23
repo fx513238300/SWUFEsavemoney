@@ -11,6 +11,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import com.swufe.swufesavemoney.SQLHelper;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 
 public class ThirdActivity extends FragmentActivity {
     private Fragment mFragments[];
@@ -18,7 +25,11 @@ public class ThirdActivity extends FragmentActivity {
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
     private RadioButton rbtHome,rbtMoney,rbtPerson;
+    public List<HashMap<String,String>> moneyList;
 
+    public List<HashMap<String, String>> getMoneyList() {
+        return moneyList;
+    }
 
   public String result="0";
 
@@ -34,7 +45,16 @@ public class ThirdActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
-
+        Runnable runnable=new Runnable() {
+            @Override
+            public void run() {
+                SQLHelper sqlHelper=new SQLHelper();
+                Connection con=sqlHelper.getConnection();
+                  moneyList=sqlHelper.getMoney(con);
+                  Log.i("ThirdActivity","成功"+moneyList);
+            }
+        };
+        new Thread(runnable).start();
 
 
         mFragments=new Fragment[3];

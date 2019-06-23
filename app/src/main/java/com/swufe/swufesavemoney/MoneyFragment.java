@@ -13,6 +13,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.swufe.swufesavemoney.SQLHelper;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
@@ -21,6 +29,8 @@ public class MoneyFragment extends Fragment  {
     EditText shengqianma;
     Button btnmoney;
     String number;
+    Connection con;
+
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,25 +46,32 @@ public class MoneyFragment extends Fragment  {
 //重写onClick函数
             public void onClick(View v){
                 String sqm=shengqianma.getText().toString();
-                if(sqm.equals("123456")){
-                    String res=((ThirdActivity)getActivity()).getResult();
-                    res= String.valueOf(Integer.parseInt(res)+2);
-                    ((ThirdActivity)getActivity()).setResult(res);
-                    Log.i("Text","shengqianma"+sqm);
-                    Log.i("Text","money"+res);
-                    Toast.makeText(getActivity(),"恭喜你！省钱成功！",Toast.LENGTH_SHORT).show();
+                List<HashMap<String,String>> list=((ThirdActivity) getActivity()).getMoneyList();
+
+                int a=list.size();
+                try{
+                    for(int i=0;i<a;i++) {
+                        String right = String.valueOf(list.get(i).get("sqm"));
+                        if (sqm.equals(right)) {
+                            String money = String.valueOf(list.get(i).get("money"));
+                            String res = ((ThirdActivity) getActivity()).getResult();
+                            res = String.valueOf(Integer.parseInt(res) + Integer.parseInt(money));
+                            Log.i("Text", "shengqianma" + sqm);
+                            Log.i("Text", "money" + res);
+                            ((ThirdActivity) getActivity()).setResult(res);
+                            Toast.makeText(getActivity(), "恭喜你！省钱成功！", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(getActivity(), "省钱码错误", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Toast.makeText(getActivity(), "省钱码错误", Toast.LENGTH_SHORT).show();
                 }
-                else if(sqm.equals("456789")){
-                    String res=((ThirdActivity)getActivity()).getResult();
-                    res= String.valueOf(Integer.parseInt(res)+3);
-                    ((ThirdActivity)getActivity()).setResult(res);
-                    Log.i("Text","shengqianma"+sqm);
-                    Log.i("Text","money"+res);
-                    Toast.makeText(getActivity(),"恭喜你！省钱成功！",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(getActivity(),"省钱码错误",Toast.LENGTH_SHORT).show();
-                }
+
             }
         });
 return view;
