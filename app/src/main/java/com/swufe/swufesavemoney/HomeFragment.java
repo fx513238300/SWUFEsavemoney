@@ -18,7 +18,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
     private ListView listView;
- String data[]={"邦尼游泳馆：次卡买五次（125元）省10元","时光小馆：满49省4.50元","东北麻辣烫：满18省0.98元","沈妈砂锅：满20省0.52元","瑞瑞的纸包鱼：满59省6.30元","一点点：满12省1.12元","从云：满25省2.36元","重庆鸡公煲：满35省4.65元","汉堡王：满25省3.21元","爱达乐：满25省2.69元","尼可熊餐厅：满49省5.30元","更多优惠，敬请期待！"};
+ String data[]={"邦尼游泳馆：次卡买五次（125元）省10元","时光小馆：满49省4元","东北麻辣烫：满18省2元","沈妈砂锅：满20省2元","瑞瑞的纸包鱼：满59省5元","一点点：满12省1元","从云：满25省3元","汉堡王：满25省3元","重庆鸡公煲：满35省4元","爱达乐：满25省3元","尼可熊餐厅：满49省5元","更多优惠，敬请期待！"};
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceSate) {
 
